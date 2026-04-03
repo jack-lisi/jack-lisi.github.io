@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四明山一日游攻略</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://webapi.amap.com/maps?v=2.0&key=ec5fa4d896ad7718588ee9b5f30daaaf"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>四明山一日游攻略</h1>
+            <p class="subtitle">从上海浦东出发 | 两个大人一个小朋友 | 自驾</p>
+            <div class="date-selector">
+                <div class="date-option">
+                    <input type="radio" id="date-4-4" name="travel-date" checked>
+                    <label for="date-4-4">4月4日（周六）</label>
+                    <div class="weather-info">
+                        <span class="weather">多云转晴</span>
+                        <span class="temp">14-24°C</span>
+                    </div>
+                </div>
+                <div class="date-option">
+                    <input type="radio" id="date-4-5" name="travel-date">
+                    <label for="date-4-5">4月5日（周日）</label>
+                    <div class="weather-info">
+                        <span class="weather">多云</span>
+                        <span class="temp">17-27°C</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- 行程概览 -->
+            <section class="overview">
+                <h2>行程概览</h2>
+                <div class="overview-card">
+                    <div class="trip-info">
+                        <div class="info-item">
+                            <span class="icon">🚗</span>
+                            <span>自驾</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">👨‍👩‍👧</span>
+                            <span>3人（2大1小）</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">⏰</span>
+                            <span>一天</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">📍</span>
+                            <span>上海浦东 → 四明山</span>
+                        </div>
+                    </div>
+                    <div class="route-summary">
+                        <h3>推荐路线</h3>
+                        <p>上海浦东 → 杭州湾跨海大桥 → 宁波绕城高速 → 四明山国家森林公园 → 四明山观景台 → 四明湖 → 上海浦东</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 详细时间表 -->
+            <section class="schedule">
+                <h2>详细时间表</h2>
+                <div class="schedule-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>时间</th>
+                                <th>地点</th>
+                                <th>活动</th>
+                                <th>备注</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>06:30</td>
+                                <td>上海浦东</td>
+                                <td>出发</td>
+                                <td>准备早餐和路上零食</td>
+                            </tr>
+                            <tr>
+                                <td>09:30</td>
+                                <td>四明山国家森林公园</td>
+                                <td>游览</td>
+                                <td>欣赏自然景观，适合小朋友</td>
+                            </tr>
+                            <tr>
+                                <td>11:30</td>
+                                <td>四明山农家菜馆</td>
+                                <td>午餐</td>
+                                <td>品尝当地特色美食</td>
+                            </tr>
+                            <tr>
+                                <td>13:00</td>
+                                <td>四明山观景台</td>
+                                <td>拍照</td>
+                                <td>欣赏四明山全景</td>
+                            </tr>
+                            <tr>
+                                <td>14:30</td>
+                                <td>四明湖</td>
+                                <td>休闲</td>
+                                <td>湖边散步，适合小朋友玩耍</td>
+                            </tr>
+                            <tr>
+                                <td>16:30</td>
+                                <td>四明湖</td>
+                                <td>返程</td>
+                                <td>准备路上零食</td>
+                            </tr>
+                            <tr>
+                                <td>19:30</td>
+                                <td>上海浦东</td>
+                                <td>抵达</td>
+                                <td>结束愉快的一天</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 地图和交通 -->
+            <section class="map-section">
+                <h2>路线地图</h2>
+                <div id="map-container"></div>
+                <div class="transport-info">
+                    <h3>交通信息</h3>
+                    <div class="transport-item">
+                        <h4>自驾路线</h4>
+                        <p>上海浦东 → 杭州湾跨海大桥 → 宁波绕城高速 → 甬金高速 → 四明山国家森林公园</p>
+                        <p>总里程：约220公里</p>
+                        <p>预计车程：约3小时</p>
+                    </div>
+                    <div class="transport-item">
+                        <h4>注意事项</h4>
+                        <p>1. 四明山部分路段山路崎岖，驾驶需谨慎</p>
+                        <p>2. 建议提前检查车辆状况</p>
+                        <p>3. 准备充足的饮用水和零食</p>
+                        <p>4. 山区温差较大，带好外套</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 景点图片卡片 -->
+            <section class="attractions">
+                <h2>景点介绍</h2>
+                <div class="attraction-cards">
+                    <div class="attraction-card">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Siming%20Mountain%20National%20Forest%20Park%20Zhejiang%20China%20scenic%20mountain%20view%20with%20green%20forests&image_size=landscape_16_9" alt="四明山国家森林公园">
+                        <h3>四明山国家森林公园</h3>
+                        <p>四明山国家森林公园是一个集自然风光、人文景观于一体的旅游胜地，适合全家人一起游览。公园内有茂密的森林、清澈的溪流和壮观的瀑布，是避暑休闲的好去处。</p>
+                    </div>
+                    <div class="attraction-card">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Siming%20Mountain%20Observation%20Deck%20Zhejiang%20China%20panoramic%20view%20of%20mountains%20and%20valleys&image_size=landscape_16_9" alt="四明山观景台">
+                        <h3>四明山观景台</h3>
+                        <p>四明山观景台是欣赏四明山全景的最佳地点，站在这里可以俯瞰整个山脉的壮丽景色。观景台视野开阔，适合拍照留念，是旅行中不可错过的景点。</p>
+                    </div>
+                    <div class="attraction-card">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Siming%20Lake%20Zhejiang%20China%20scenic%20lake%20with%20mountains%20in%20background&image_size=landscape_16_9" alt="四明湖">
+                        <h3>四明湖</h3>
+                        <p>四明湖是四明山脚下的一个美丽湖泊，湖水清澈，周围环境优美。湖边有休闲步道，适合散步和拍照，小朋友可以在湖边玩耍，是放松身心的好地方。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 美食推荐 -->
+            <section class="food">
+                <h2>美食推荐</h2>
+                <div class="food-cards">
+                    <div class="food-card">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=local%20Ningbo%20cuisine%20traditional%20Chinese%20food%20with%20fresh%20ingredients&image_size=landscape_16_9" alt="宁波菜">
+                        <h3>宁波特色菜</h3>
+                        <ul>
+                            <li>宁波汤圆</li>
+                            <li>奉化芋艿头</li>
+                            <li>宁波海鲜</li>
+                            <li>四明山土鸡汤</li>
+                        </ul>
+                    </div>
+                    <div class="food-card">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=country%20style%20restaurant%20in%20mountain%20area%20with%20homemade%20food&image_size=landscape_16_9" alt="农家菜">
+                        <h3>农家菜馆推荐</h3>
+                        <ul>
+                            <li>四明山农家菜馆</li>
+                            <li>山景餐厅</li>
+                            <li>湖畔小馆</li>
+                            <li>森林餐厅</li>
+                        </ul>
+                    </div>
+                    <div class="food-card">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=snacks%20and%20refreshments%20for%20road%20trip%20with%20family&image_size=landscape_16_9" alt="路上零食">
+                        <h3>路上零食推荐</h3>
+                        <ul>
+                            <li>水果（苹果、橘子等）</li>
+                            <li>坚果类零食</li>
+                            <li>饼干、面包</li>
+                            <li>矿泉水、饮料</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 实用信息 -->
+            <section class="practical-info">
+                <h2>实用信息</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h3>紧急电话</h3>
+                        <ul>
+                            <li>报警：110</li>
+                            <li>急救：120</li>
+                            <li>消防：119</li>
+                            <li>道路救援：122</li>
+                        </ul>
+                    </div>
+                    <div class="info-item">
+                        <h3>注意事项</h3>
+                        <ul>
+                            <li>携带雨具，山区天气多变</li>
+                            <li>穿着舒适的鞋子，适合步行</li>
+                            <li>准备小朋友的玩具和书籍</li>
+                            <li>注意防晒，带好防晒霜</li>
+                            <li>遵守交通规则，安全驾驶</li>
+                        </ul>
+                    </div>
+                    <div class="info-item">
+                        <h3>必备物品</h3>
+                        <ul>
+                            <li>身份证、驾驶证</li>
+                            <li>手机充电器</li>
+                            <li>急救包</li>
+                            <li>垃圾袋</li>
+                            <li>纸巾、湿巾</li>
+                        </ul>
+                    </div>
+                    <div class="info-item">
+                        <h3>最佳游览时间</h3>
+                        <ul>
+                            <li>春季（3-5月）：山花烂漫</li>
+                            <li>秋季（9-11月）：层林尽染</li>
+                            <li>避开节假日：人多拥挤</li>
+                            <li>建议早出发：避开高峰期</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 四明山一日游攻略 | 设计与制作</p>
+        </div>
+    </footer>
+</body>
+</html>
